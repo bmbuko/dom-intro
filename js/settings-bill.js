@@ -12,7 +12,6 @@
 
 //add an event listener for when the 'Update settings' button is pressed
 
-//add an event listener for when the add button is pressed
 
 //in the event listener get the value from the billItemTypeRadio radio buttons
 // * add the appropriate value to the call / sms total
