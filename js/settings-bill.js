@@ -23,7 +23,7 @@ var costOfCall = 0;
 var costOfSMS = 0;
 var criticalCost = 0;
 var warningCost = 0;
-var totalSettings = 0.00;
+
 // create a variables that will keep track of all three totals.
 var cTotal = 0;
 var sTotal = 0;
@@ -35,7 +35,7 @@ function settingsUpdate(){
     costOfSMS = Number(smsCostSettingElem.value);
     criticalCost = Number(criticalLevelSettingElem.value);
     warningCost = Number(warningLevelSettingElem.value);
-    totalColor(totalSettings,warningCost,criticalCost);
+    totalColor(total,warningCost,criticalCost);
 }
 function radioBillSetTotal(){
 
@@ -50,10 +50,14 @@ else if(billItemTypeWithSettings === "sms"){
 }
 callsElement.innerHTML = cTotal.toFixed(2);
 smsElement.innerHTML = sTotal.toFixed(2);
-var totCost = cTotal + sTotal;
-totalCostElement.innerHTML = totCost.toFixed(2)
+totalColor(total,warningCost,criticalCost);
+total = cTotal + sTotal;
+totalCostElement.innerHTML = total.toFixed(2)
 }
 function totalColor(currentTotal,currentWarning,currentCritical){
+    totalCostElement.classList.remove("warning");
+    totalCostElement.classList.remove("danger");
+             
     if(currentTotal >= currentWarning && currentTotal < currentCritical){
     totalCostElement.classList.remove("danger");
     totalCostElement.classList.add("warning");
@@ -63,10 +67,8 @@ function totalColor(currentTotal,currentWarning,currentCritical){
             totalCostElement.classList.add("danger");
     
             }
-            else{
-                totalCostElement.classList.remove("warning")
-                totalCostElement.classList.remove("danger")
-            }
+        
+        
     }
     
 
