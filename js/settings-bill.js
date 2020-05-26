@@ -41,19 +41,23 @@ function radioBillSetTotal(){
 
 var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 var billItemTypeWithSettings = checkedRadioBtn.value
-
+if(total < criticalCost){
 if(billItemTypeWithSettings === "call"){
     cTotal += costOfCall;
 }
 else if(billItemTypeWithSettings === "sms"){
     sTotal += costOfSMS;
 }
+}
+
+
 callsElement.innerHTML = cTotal.toFixed(2);
 smsElement.innerHTML = sTotal.toFixed(2);
 totalColor(total,warningCost,criticalCost);
 total = cTotal + sTotal;
 totalCostElement.innerHTML = total.toFixed(2)
 }
+
 function totalColor(currentTotal,currentWarning,currentCritical){
     totalCostElement.classList.remove("warning");
     totalCostElement.classList.remove("danger");
