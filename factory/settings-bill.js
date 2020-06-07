@@ -32,11 +32,14 @@ let theCriticalLevel = 0;
         return theCriticalLevel;
     }
 
-    function actionType(type) {
+
+
+
+    
 
         
 
-    }
+    
 
 
     return {
@@ -52,6 +55,4 @@ let theCriticalLevel = 0;
     
 
     }
-
-
 }
