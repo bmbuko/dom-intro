@@ -12,7 +12,7 @@ var smsCostTotal = 0;
     }
 
     function getCallCost() {
-        return callCost;
+        return callCost += theSmsCost;
     }
     function setSmsCost(smsCost){
         theSmsCost = smsCost;
