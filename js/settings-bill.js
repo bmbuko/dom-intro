@@ -1,20 +1,20 @@
 // get a reference to the sms or call radio buttons
-const billItemTypeWithSettings =document.querySelector(".billItemTypeWithSettings")
+const billItemTypeWithSettings =document.querySelector(".billItemTypeWithSettings");
 
 
 // get refences to all the settings fields
 const callsElement = document.querySelector(".callTotalSettings");
 const smsElement = document.querySelector(".smsTotalSettings");
-const totalCostElement = document.querySelector(".totalSettings")
+const totalCostElement = document.querySelector(".totalSettings");
 
 //get a reference to the add button
-const addBtn = document.querySelector(".radioAddBtn")
+const addBtn = document.querySelector(".radioAddBtn");
 
 //get a reference to the 'Update settings' button
 const updateSettingsBtn =document.querySelector(".updateSettings");
 
 // create a variables that will keep track of all the settings
-const callCostSettingElem =document.querySelector(".callCostSetting")
+const callCostSettingElem =document.querySelector(".callCostSetting");
 const smsCostSettingElem = document.querySelector(".smsCostSetting");
 const warningLevelSettingElem =document.querySelector(".warningLevelSetting");
 const criticalLevelSettingElem = document.querySelector(".criticalLevelSetting");
@@ -76,7 +76,7 @@ function totalColor(currentTotal,currentWarning,currentCritical){
     }
     
 
-addBtn.addEventListener("click",radioBillSetTotal)
+addBtn.addEventListener("click",radioBillSetTotal);
     
 
     //add an event listener for when the 'Update settings' button is pressed
