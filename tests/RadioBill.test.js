@@ -4,10 +4,11 @@ describe("The Radio Bill",function(){
         let radioBill= RadioBill()
         
         radioBill.makeCall("call");
-        radioBill.makeCall("call")
+        
         radioBill.makeCall("call");
         radioBill.makeCall("call");
-        assert.equal(11,radioBill.getTotalCost())
+        radioBill.makeCall("call");
+        assert.equal(11,radioBill.totalCost())
         assert.equal(11,radioBill.getCallTotal())
 
     });
@@ -16,7 +17,7 @@ describe("The Radio Bill",function(){
         radioBill.sendSms("sms");
         radioBill.sendSms("sms");
 
-        assert.equal(1.50,radioBill.getTotalCost());
+        assert.equal(1.50,radioBill.totalCost());
         assert.equal(1.50,radioBill.getSmsTotal());
 
     });
@@ -27,7 +28,7 @@ describe("The Radio Bill",function(){
         radioBill.makeCall("call");
         assert.equal(0.75,radioBill.getSmsTotal());
         assert.equal(2.75,radioBill.getCallTotal());
-        assert.equal(3.50,radioBill.getTotalCost());
+        assert.equal(3.50,radioBill.totalCost());
     });
     describe("The warning and danger total color",function(){
         

@@ -3,6 +3,8 @@ function RadioBill(){
     var smsTotal = 0;
     var theCallCost = 2.75
     var smsCost = 0.75
+    var theWarning = 30
+    var theDanger = 50
     
 
     function getCallTotal(){
@@ -12,7 +14,7 @@ function RadioBill(){
     function makeCall(){
         return callTotal += theCallCost 
     }
-    function getTotalCost(){
+    function totalCost(){
         return callTotal += smsTotal;
     }
     function sendSms(){
@@ -22,13 +24,14 @@ function RadioBill(){
     function getSmsTotal(){
          return smsTotal
     }
+    function getWarning(){
+        return theWarning
+    } 
     function totalColor(){ 
-        if(getTotalCost >= 30){
+        if(totalCost() >= getWarning()){
             return "warning"
         }
-        if(getTotalCost >= 50){
-            return "danger"
-        }
+        
 
     }
 
@@ -44,9 +47,10 @@ function RadioBill(){
 return{
     makeCall,
     getCallTotal,
-    getTotalCost,
+    totalCost,
     sendSms,
     getSmsTotal,
-    totalColor
+    totalColor,
+    getWarning
 }
 }
