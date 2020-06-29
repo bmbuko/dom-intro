@@ -32,13 +32,53 @@ describe("The Radio Bill",function(){
     });
     describe("The warning and danger total color",function(){
         
-        it("should  show  the total in orange if the total cost exceeds 30",function(){
-            let radioBill = RadioBill();
+       it("should  show  the total in 'orange' if the total cost exceeds 30",function(){
+           let radioBill = RadioBill();
 
-            radioBill.makeCall("call")
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
+           radioBill.makeCall();
 
-            assert.equal("warning",radioBill.totalColor())
+
+
+
+            assert.equal("orange",radioBill.totalColor())
         });
+        it("should show the total in 'red'  if the the total cost exceeds 50",function(){
+            let radioBill = RadioBill()
+
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+            radioBill.makeCall();
+
+            assert.equal("danger",radioBill.totalColor());
+
+        })
 
     });
     
