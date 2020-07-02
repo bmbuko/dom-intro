@@ -1,29 +1,54 @@
 function TextBill(){
-    callCost =2.75
-    callsTotal =0;
-    smsCost = 0.75;
-    smsTotal =0;
-    function setCallCost(call){
+   var callCost =2.75
+   var callsTotal =0;
+    var smsCost = 0.75;
+    var smsTotal =0;
+    var warning = 30
+    var danger = 50
+    
+    
+
+    function setCallCost(){
         return callCost = call;
 
     } 
-    function theSmsCost(smsCost){
+    function theSmsCost(){
         return  smsCost = sms;
     }
-    function getCallCost(){
-        return callCost;
-    }
-    function getSmsCost(){
-        return smsCost
-    }
+
     function callTotal(){
         return callsTotal;
+        
     }
-    function action(call){
-        return callCost += callsTotal
+    function theSmsTotal(){
+        return smsTotal
     }
+    function action(){
+        return  callsTotal += callCost
+        
+    }
+    function actionSendSms(){
+        return smsTotal += smsCost
+    } 
     function theTotal(){
-        return callsTotal + smsTotal
+        return callsTotal +=smsTotal
+    }
+        function orange(){
+            return warning;
+        }
+        function red(){
+            return danger;
+        }
+        
+    
+    function theTotalColor(){
+        if(theTotal()>= red() ){
+            return"danger"
+        }
+        if(theTotal() >= orange()){
+            return"warning"
+        }
+    
     }
 
 
@@ -39,11 +64,14 @@ function TextBill(){
     return{
         setCallCost,
         theSmsCost,
-        getSmsCost,
-        getCallCost,
         callTotal,
         action,
-        theTotal
+        theTotal,
+        actionSendSms,
+        theSmsTotal,
+        orange,
+        red,
+        theTotalColor
     }
     
 
