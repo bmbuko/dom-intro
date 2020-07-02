@@ -26,14 +26,19 @@ function RadioBill(){
     }
     function getWarning(){
         return theWarning
-    } 
-    function totalColor(){ 
-        if(totalCost() >= getWarning()){
-            return "warning"
-        }
-        
-
     }
+    function getDanger(){
+        return theDanger
+    } 
+    function totalColor() {
+        if(totalCost() >= getDanger()){
+            return "danger"
+        }
+    if(totalCost() >= getWarning()){
+        return "warning"
+    }
+}
+
 
 
 
@@ -51,6 +56,7 @@ return{
     sendSms,
     getSmsTotal,
     totalColor,
-    getWarning
+    getWarning,
+    getDanger
 }
 }
