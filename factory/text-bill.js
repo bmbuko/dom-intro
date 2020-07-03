@@ -45,7 +45,9 @@ function TextBill(){
         if(theTotal()>= red() ){
             return"danger"
         }
-        if(theTotal() >= orange()){
+        if(theTotal(
+            
+        ) >= orange()){
             return"warning"
         }
     
