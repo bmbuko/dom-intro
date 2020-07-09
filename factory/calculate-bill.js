@@ -1,6 +1,6 @@
 
 function totalPhoneBill(billString){
-    billItems = billString.split(",");
+    var billItems = billString.split(",");
     var billTotal = 0;
     for(var i= 0;i<billItems.length;i++){
         var billItem =billItems[i].trim();

@@ -1,62 +1,78 @@
-function RadioBill(){
-    var callTotal = 0;
+function RadioBill() {
+    var callCost = 2.75
+    var callsTotal = 0;
+    var smsCost = 0.75;
     var smsTotal = 0;
-    var theCallCost = 2.75
-    var smsCost = 0.75
-    var theWarning = 30
-    var theDanger = 50
-    
+    var warning = 30
+    var danger = 50
 
-    function getCallTotal(){
-        return callTotal;
 
-    }
-    function makeCall(){
-        return callTotal += theCallCost 
-    }
-    function totalCost(){
-        return callTotal += smsTotal;
-    }
-    function sendSms(){
-        return smsTotal += smsCost;
+
+    function setCallCost() {
+        return callCost = call;
 
     }
-    function getSmsTotal(){
-         return smsTotal
+    function theSmsCost() {
+        return smsCost = sms;
     }
-    function getWarning(){
-        return theWarning
+
+    function getCallTotal() {
+        return callsTotal;
+
     }
-    function getDanger(){
-        return theDanger
-    } 
+    function getSmsTotal() {
+        return smsTotal
+    }
+
+    // function action() {
+    //     return callsTotal += callCost
+
+    // }
+    // function actionSendSms() {
+    //     return smsTotal += smsCost
+    // }
+    function theTotal() {
+        return callsTotal + smsTotal
+    }
+    function orange() {
+        return warning;
+    }
+    function red() {
+        return danger;
+    }
+    function billItemType(billItemType) {
+        if (billItemType === "call") {
+            callsTotal += 2.75;
+        }
+        else if (billItemType === "sms") {
+            smsTotal += 0.75;
+        }
+    }
+
+
     function totalColor() {
-        if(totalCost() >= getDanger()){
+        if (theTotal() >= red()) {
             return "danger"
         }
-    if(totalCost() >= getWarning()){
-        return "warning"
+        if (theTotal() >= orange()) {
+            return "warning"
+        }
+
     }
-}
+    
+
+         return {
+        setCallCost,
+        theSmsCost,
+        getCallTotal,
+        theTotal,
+        getSmsTotal,
+        orange,
+        red,
+        totalColor,
+        billItemType
+    }
 
 
 
-
-
-
-
-
-
-
-
-return{
-    makeCall,
-    getCallTotal,
-    totalCost,
-    sendSms,
-    getSmsTotal,
-    totalColor,
-    getWarning,
-    getDanger
-}
 }
