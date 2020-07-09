@@ -56,6 +56,14 @@ var smsCostTotal = 0;
          smsCostTotal += theSmsCost;
         }
     }
+    function billType(billItemTypeWithSettings){
+        if(billItemTypeWithSettings === "call"){
+            callCostTotal += costOfCall;
+        }
+        else if(billItemTypeWithSettings === "sms"){
+            smsCostTotal += costOfSMS;
+        } 
+    }
 
     function hasReachedCriticalLevel(){
         return getTotalCost() >=  getCriticalLevel();
@@ -95,8 +103,9 @@ var smsCostTotal = 0;
         getTotalSmsCost,
         sendSms,
         totalClassName,
-        hasReachedCriticalLevel
-
+        hasReachedCriticalLevel,
+        billType
+        
 
 
         
