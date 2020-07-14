@@ -181,7 +181,7 @@ it(" should return a class name of 'critical' if critical level  has been reache
     
 
     
-    assert.equal("critical",settingsBill.totalClassName());
+    assert.equal("danger",settingsBill.totalClassName());
 });
 it(" should stop  the total call cost from increasing when critical level  has been reached",function() {
 
@@ -202,7 +202,7 @@ it(" should stop  the total call cost from increasing when critical level  has b
     
 
     
-    assert.equal("critical",settingsBill.totalClassName());
+    assert.equal("danger",settingsBill.totalClassName());
     assert.equal(6,settingsBill.getTotalCallCost());
 });
 });

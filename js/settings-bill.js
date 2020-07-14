@@ -90,4 +90,4 @@ updateSettingsBtn.addEventListener("click",settingsUpdate);
 // * add the appropriate value to the overall total
 // * add nothing for invalid values that is not 'call' or 'sms'.
 // * display the latest total on the screen.
-// * check the value thresholds and display  total value in the right color.[]thehjk7/ 
+// * check the value thresholds and display  total value in the right color.

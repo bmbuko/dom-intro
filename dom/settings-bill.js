@@ -19,65 +19,49 @@ const smsCostSettingElem = document.querySelector(".smsCostSetting");
 const warningLevelSettingElem = document.querySelector(".warningLevelSetting");
 const criticalLevelSettingElem = document.querySelector(".criticalLevelSetting");
 
-/*var costOfCall = 0;
-var costOfSMS = 0;
-var criticalCost = 0;
-var warningCost = 0;
-
-// create a variables that will keep track of all three totals.
-/*var cTotal = 0;
-var sTotal = 0;
-var total = 0;
-*/
 const settingsBill = SettingsBill();
 
 function settingsUpdate() {
 
-  costOfCall = Number(callCostSettingElem.value);
-  costOfSMS = Number(smsCostSettingElem.value);
-  criticalCost = Number(criticalLevelSettingElem.value);
-  warningCost = Number(warningLevelSettingElem.value);
-  //totalColor(total,warningCost,criticalCost);
+
+  const costOfCall = Number(callCostSettingElem.value);
+  const costOfSMS = Number(smsCostSettingElem.value);
+  const criticalCost = Number(criticalLevelSettingElem.value);
+  const warningCost = Number(warningLevelSettingElem.value);
+
+  settingsBill.setCallCost(costOfCall);
+  settingsBill.setSmsCost(costOfSMS);
+  settingsBill.setCriticalLevel(criticalCost);
+  settingsBill.setWarningLevel(warningCost);
+
+  totalColor()
+
 }
 function radioBillSetTotal() {
 
   var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
   var billItemTypeWithSettings = checkedRadioBtn.value
   settingsBill.billType(billItemTypeWithSettings);
-  //if(total < criticalCost){
-  //if(billItemTypeWithSettings === "call"){
-  //  cTotal += costOfCall;
-  //}
-  //else if(billItemTypeWithSettings === "sms"){
-  //  sTotal += costOfSMS;
-  //}
-  //}
 
 
 
-  callsElement.innerHTML = settingsBill.getCallCost();
-  smsElement.innerHTML = settingsBill.getSmsCost();
-  //totalColor(total,warningCost,criticalCost);
+
+  callsElement.innerHTML = settingsBill.getTotalCallCost();
+  smsElement.innerHTML = settingsBill.getTotalSmsCost();
+
+  totalColor()
+
+
   //total = cTotal + sTotal;
   totalCostElement.innerHTML = settingsBill.getTotalCost();
 }
 
-function totalColor(currentTotal, currentWarning, currentCritical) {
+function totalColor() {
   totalCostElement.classList.remove("warning");
   totalCostElement.classList.remove("danger");
-
-  if (currentTotal >= currentWarning && currentTotal < currentCritical) {
-    totalCostElement.classList.remove("danger");
-    totalCostElement.classList.add("warning");
-  }
-  else if (currentTotal >= currentCritical) {
-    totalCostElement.classList.remove("warning");
-    totalCostElement.classList.add("danger");
-
-  }
-
-
+  totalCostElement.classList.add(settingsBill.totalClassName());
 }
+
 
 
 addBtn.addEventListener("click", radioBillSetTotal);
